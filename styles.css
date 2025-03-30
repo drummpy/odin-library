@@ -2,4 +2,51 @@ html,
 body {
   font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: #a7ae8e;
+  color: #fefae0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  max-width: 1440px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+#bookfield {
+  background-color: #e9edc9;
+  color: #5f6350;
+  padding: 0.5rem;
+  border-radius: 7px;
+  flex: 0 0 auto;
+  align-self: flex-start;
+}
+
+.left {
+  flex: 0 0 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.right {
+  flex: 0 0 65%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+h1,
+p {
+  margin: 0;
 }
