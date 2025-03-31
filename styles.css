@@ -23,13 +23,14 @@ body {
   gap: 1rem;
 }
 
-#bookfield {
+.bookfield {
   background-color: #e9edc9;
   color: #5f6350;
   padding: 0.5rem;
   border-radius: 7px;
   flex: 0 0 auto;
   align-self: flex-start;
+  font-size: 0.85rem;
 }
 
 .left {
