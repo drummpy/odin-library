@@ -12,8 +12,33 @@
       <div class="left">
         <h1>Library</h1>
         <p>Books go to the right.</p>
+        <button id="opendiag">Add Book</button>
       </div>
       <div class="right"></div>
     </div>
+    <dialog id="dialog">
+      <form method="dialog">
+        <fieldset>
+          <p>
+            <label for="author">AUTHOR:</label>
+            <input id="author" name="author" type="text" required />
+          </p>
+          <p>
+            <label for="title">TITLE:</label>
+            <input id="title" name="title" type="text" required />
+          </p>
+          <p>
+            <label for="pages">PAGES:</label>
+            <input id="pages" name="pages" type="number" required />
+          </p>
+          <p>
+            <label for="read">READ:</label>
+            <input type="checkbox" id="read" />
+          </p>
+          <button id="addbookdiag">Add Book</button>
+          <button id="closediag">Close</button>
+        </fieldset>
+      </form>
+    </dialog>
   </body>
 </html>
