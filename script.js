@@ -1,4 +1,4 @@
-const myLibrary = [];
+let myLibrary = [];
 const bookshelf = document.querySelector(".right");
 const openDiag = document.getElementById("opendiag");
 const closeDiag = document.getElementById("closediag");
@@ -23,6 +23,11 @@ function addBookToLibrary(author, title, pages, read) {
   myLibrary.push(newBook);
 }
 
+function removeBookFromLibrary(id) {
+  myLibrary = myLibrary.filter((book) => book.id !== id);
+  showBooks();
+}
+
 function showBooks() {
   bookshelf.innerHTML = ""; //Clear Bookshelf
 
@@ -33,10 +38,17 @@ function showBooks() {
     <p><b>Author:</b> ${book.author}</p>
     <p><b>Title:</b> ${book.title}</p>
     <p><b>Pages:</b> ${book.pages}</p>
-    <p><b>Read?</b> ${book.read}</p>`;
+    <p><b>Read?</b> ${book.read}</p>
+    <button class="deletebtn" id="${book.id}">Delete</button>`;
     bookdiv.id = book.id;
 
     bookshelf.appendChild(bookdiv);
+
+    const deleteButton = document.getElementById(book.id);
+    deleteButton.addEventListener("click", () => {
+      removeBookFromLibrary(book.id);
+    });
+    console.log(myLibrary);
   });
 }
 
@@ -64,6 +76,6 @@ addBookBtn.addEventListener("click", (event) => {
   form.reset();
 });
 
-addBookToLibrary("Dickens", "The Night", 633, "Yes");
-addBookToLibrary("Johnson", "Where's my Johnson?", 12, "No");
-console.log(myLibrary);
+// addBookToLibrary("Dickens", "The Night", 633, "Yes");
+// addBookToLibrary("Johnson", "Where's my Johnson?", 12, "No");
+showBooks();
