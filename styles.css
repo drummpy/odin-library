@@ -26,11 +26,15 @@ body {
 .bookfield {
   background-color: #e9edc9;
   color: #5f6350;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   border-radius: 7px;
   flex: 0 0 auto;
   align-self: flex-start;
   font-size: 0.85rem;
+}
+
+.bookfield p {
+  padding: 0;
 }
 
 .left {
@@ -50,4 +54,37 @@ body {
 h1,
 p {
   margin: 0;
+  padding: 0.5rem;
+}
+
+button {
+  font-size: 0.85rem;
+  font-weight: bold;
+  background-color: #e9edc9;
+  color: #5f6350;
+  border: none;
+  border-radius: 7px;
+  padding: 1em;
+}
+
+.deletebtn {
+  background-color: #5f6350;
+  color: #e9edc9;
+  margin-top: 0.5em;
+  padding: 0.5em 1em;
+}
+
+dialog {
+  background-color: #5f6350;
+  color: #e9edc9;
+}
+
+input[type="text"],
+input[type="number"] {
+  background-color: #e9edc9;
+  border: 1px solid #d6d9dc;
+  border-radius: 3px;
+  padding: 5px;
+  font-size: 0.85em;
+  color: #5f6350;
 }

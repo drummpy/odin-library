@@ -39,7 +39,7 @@ function showBooks() {
     <p><b>Title:</b> ${book.title}</p>
     <p><b>Pages:</b> ${book.pages}</p>
     <p><b>Read?</b> ${book.read}</p>
-    <button class="deletebtn" id="${book.id}">Delete</button>`;
+    <button class="deletebtn" id="${book.id}">Delete</button>`; //Add delete button
     bookdiv.id = book.id;
 
     bookshelf.appendChild(bookdiv);
@@ -76,6 +76,4 @@ addBookBtn.addEventListener("click", (event) => {
   form.reset();
 });
 
-// addBookToLibrary("Dickens", "The Night", 633, "Yes");
-// addBookToLibrary("Johnson", "Where's my Johnson?", 12, "No");
 showBooks();
