@@ -67,7 +67,8 @@ button {
   padding: 1em;
 }
 
-.deletebtn {
+.deletebtn,
+.readbtn {
   background-color: #5f6350;
   color: #e9edc9;
   margin-top: 0.5em;

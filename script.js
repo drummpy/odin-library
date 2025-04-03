@@ -28,6 +28,15 @@ function removeBookFromLibrary(id) {
   showBooks();
 }
 
+function swapReadStatus(id) {
+  const book = myLibrary.find((book) => book.id === id);
+
+  if (book) {
+    book.read = book.read === "Yes" ? "No" : "Yes";
+  }
+  showBooks();
+}
+
 function showBooks() {
   bookshelf.innerHTML = ""; //Clear Bookshelf
 
@@ -39,14 +48,19 @@ function showBooks() {
     <p><b>Title:</b> ${book.title}</p>
     <p><b>Pages:</b> ${book.pages}</p>
     <p><b>Read?</b> ${book.read}</p>
-    <button class="deletebtn" id="${book.id}">Delete</button>`; //Add delete button
+    <button class="deletebtn" id="delete-${book.id}">Delete</button>
+    <button class="readbtn" id="read-${book.id}">Read?</button>`;
     bookdiv.id = book.id;
 
     bookshelf.appendChild(bookdiv);
 
-    const deleteButton = document.getElementById(book.id);
+    const deleteButton = document.getElementById("delete-" + book.id);
     deleteButton.addEventListener("click", () => {
       removeBookFromLibrary(book.id);
+    });
+    const readButton = document.getElementById("read-" + book.id);
+    readButton.addEventListener("click", () => {
+      swapReadStatus(book.id);
     });
     console.log(myLibrary);
   });
