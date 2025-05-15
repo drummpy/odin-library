@@ -75,6 +75,9 @@ const authorInput = document.getElementById("author");
 const titleInput = document.getElementById("title");
 const pagesInput = document.getElementById("pages");
 const readInput = document.getElementById("read");
+const authorError = document.getElementById("authorerror");
+const titleError = document.getElementById("titleerror");
+const pagesError = document.getElementById("pageserror");
 
 openDiag.addEventListener("click", () => {
   dialog.showModal();
@@ -85,8 +88,23 @@ closeDiag.addEventListener("click", (event) => {
   dialog.close();
 });
 
+authorInput.addEventListener("input", (event) => {
+  if (authorInput.validity.tooShort) {
+    authorError.textContent = "Too Short";
+    authorInput.setCustomValidity("I am expecting 50 chars!");
+  } else {
+    authorError.textContent = "";
+  }
+});
+
 addBookBtn.addEventListener("click", (event) => {
   event.preventDefault();
+
+  if (!authorInput.checkValidity()) {
+    authorError.textContent = authorInput.validationMessage;
+    return;
+  }
+
   library.addBookToLibrary(
     authorInput.value,
     titleInput.value,

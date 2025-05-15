@@ -80,7 +80,7 @@ dialog {
   color: #e9edc9;
 }
 
-input[type="text"],
+input[type="text"]:valid,
 input[type="number"] {
   background-color: #e9edc9;
   border: 1px solid #d6d9dc;
@@ -88,4 +88,18 @@ input[type="number"] {
   padding: 5px;
   font-size: 0.85em;
   color: #5f6350;
+}
+
+input:invalid {
+  border: 1px solid red;
+  background-color: #e9edc9;
+  border-radius: 3px;
+  padding: 5px;
+  font-size: 0.85em;
+  color: #5f6350;
+}
+
+#authorerror {
+  font-size: 0.5em;
+  color: red;
 }
